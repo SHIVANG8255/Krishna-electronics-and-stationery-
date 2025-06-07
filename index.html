@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mobile & Stationery Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url('https://images.unsplash.com/photo-1585386959984-a41552262aba') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .scrolling-products::-webkit-scrollbar {
+      width: 6px;
+    }
+    .scrolling-products::-webkit-scrollbar-thumb {
+      background: #4B5563;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 bg-opacity-75 text-white font-sans">
+
+  <header class="p-4 bg-black bg-opacity-80 flex justify-between items-center">
+    <h1 class="text-3xl font-bold">📱🖊️ My Accessories & Stationery</h1>
+    <nav class="space-x-4 overflow-x-auto whitespace-nowrap scrolling-products">
+      <a href="#home" class="hover:underline">Home</a>
+      <a href="#products" class="hover:underline">Products</a>
+      <a href="#repair" class="hover:underline">Repairs</a>
+      <a href="#about" class="hover:underline">About</a>
+      <a href="#contact" class="hover:underline">Contact</a>
+      <a href="#login" class="hover:underline">Login</a>
+      <a href="#cart" class="hover:underline">Cart</a>
+      <a href="#policy" class="hover:underline">Policy</a>
+      <a href="#payment" class="hover:underline">Payment</a>
+    </nav>
+  </header>
+
+  <!-- Discount slider -->
+  <section class="bg-white text-black p-4 m-4 rounded shadow-lg max-w-3xl mx-auto relative overflow-hidden">
+    <h2 class="text-center font-bold text-xl mb-2">🔥 Ongoing Discounts 🔥</h2>
+    <div id="discountSlider" class="text-center text-lg font-semibold h-10 leading-10 transition-all duration-1000">
+      <p class="slide">Buy 1 Get 1 Free on Gel Pens!</p>
+      <p class="slide hidden">50% Off on Mobile Chargers!</p>
+      <p class="slide hidden">Free Delivery for Orders Above ₹499</p>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="p-4 bg-gray-800 bg-opacity-90 rounded mx-4 my-6 shadow-lg">
+    <h2 class="text-2xl font-bold mb-4">🛒 Our Products</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="bg-gray-700 p-4 rounded shadow">
+        <img src="https://via.placeholder.com/150" alt="Charger" class="rounded mb-2">
+        <h3 class="font-bold text-lg">Fast Charger</h3>
+        <p>High-speed charging adapter for all phones.</p>
+        <p class="text-green-400 font-bold mt-1">₹399</p>
+      </div>
+      <div class="bg-gray-700 p-4 rounded shadow">
+        <img src="https://via.placeholder.com/150" alt="Earphones" class="rounded mb-2">
+        <h3 class="font-bold text-lg">Wireless Earphones</h3>
+        <p>Bluetooth 5.0, long battery life.</p>
+        <p class="text-green-400 font-bold mt-1">₹799</p>
+      </div>
+      <div class="bg-gray-700 p-4 rounded shadow">
+        <img src="https://via.placeholder.com/150" alt="Notebook" class="rounded mb-2">
+        <h3 class="font-bold text-lg">Spiral Notebook</h3>
+        <p>A4 size, 200 pages.</p>
+        <p class="text-green-400 font-bold mt-1">₹120</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile Repair Section -->
+  <section id="repair" class="p-4 bg-gray-700 rounded mx-4 my-6 shadow-lg">
+    <h2 class="text-xl font-bold mb-2">🔧 Mobile Repair Services</h2>
+    <p>We repair all smartphone brands at our workplace. Visit us for screen replacement, battery change, and more!</p>
+  </section>
+
+  <!-- Payment Section -->
+  <section id="payment" class="p-4 bg-gray-800 rounded mx-4 my-6 shadow-lg">
+    <h2 class="text-xl font-bold mb-2">💳 Payment Gateway (Demo)</h2>
+    <form>
+      <input type="text" placeholder="Cardholder Name" class="p-2 rounded w-full mb-2 text-black">
+      <input type="text" placeholder="Card Number" class="p-2 rounded w-full mb-2 text-black">
+      <input type="text" placeholder="Expiry Date" class="p-2 rounded w-full mb-2 text-black">
+      <input type="text" placeholder="CVV" class="p-2 rounded w-full mb-2 text-black">
+      <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Pay Now</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-center py-4 mt-6">
+    <p>&copy; 2025 My Accessories & Stationery. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for slider -->
+  <script>
+    let index = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    setInterval(() => {
+      slides[index].classList.add('hidden');
+      index = (index + 1) % slides.length;
+      slides[index].classList.remove('hidden');
+    }, 2000);
+  </script>
+
+</body>
+</html>
